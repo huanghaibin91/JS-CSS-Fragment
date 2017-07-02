@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .tabMenu {
+            width: 300px;
+            margin: 50px auto 0 auto;
+            border: 1px solid #ccc;
+        }
+
+        .tabMenu ul {
+            display: block;
+            overflow: hidden;
+            width: 300px;
+            height: 40px;
+            background-color: #eee;
+        }
+
+        .tabMenu ul li {
+            cursor: pointer;
+            display: block;
+            float: left;
+            width: 100px;
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .tabMenu ul li.active {
+            background-color: #f00;
+            color: #fff;
+        }
+
+        .tabMenu .tabSide {
+            display: none;
+            padding: 10px;
+            line-height: 25px;
+        }
+
+        .tabMenu div.active {
+            display: block;
+            padding: 10px;
+            line-height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tabMain" class="tabMenu">
+        <ul>
+            <li class="active">前端菜鸟</li>
+            <li>前端教程</li>
+            <li>前端开发</li>
+        </ul>
+        <div class="tabSide active">
+            前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟
+        </div>
+        <div class="tabSide">
+            前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程
+        </div>
+        <div class="tabSide">
+            前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发
+        </div>
+    </div>
+
+    <div id="tabMain1" class="tabMenu">
+        <ul>
+            <li class="active">前端菜鸟</li>
+            <li>前端教程</li>
+            <li>前端开发</li>
+        </ul>
+        <div class="tabSide active">
+            前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟前端菜鸟
+        </div>
+        <div class="tabSide">
+            前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程前端教程
+        </div>
+        <div class="tabSide">
+            前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发前端开发
+        </div>
+    </div>
+
+    <!-- script -->
+    <script>
+        window.onload = function () {
+            tab("tabMain", "mouseover");
+            tab("tabMain1", "click");
+        }
+
+
+        var tab = function (id, event) {
+            var oDiv = document.getElementById(id);
+            var oBtn = oDiv.getElementsByTagName("li");
+            var oBox = oDiv.getElementsByTagName("div");
+            for (var i = 0; i < oBtn.length; i++) {
+                (function (index) {
+                    oBtn[i].addEventListener(event, function () {
+                        for (var i = 0; i < oBtn.length; i++) {
+                            oBtn[i].className = "";
+                            oBox[i].className = "tabSide";
+                        }
+                        this.className = "active";
+                        oBox[index].className = "active";
+                    })
+                })(i)
+            }
+        }
+    </script>
+</body>
+
+</html>

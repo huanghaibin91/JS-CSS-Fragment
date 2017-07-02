@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #main {
+            position: relative;
+        }
+
+        .pin {
+            padding: 15px 0 0 15px;
+            float: left;
+        }
+
+        .box {
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 6px #ccc;
+            border-radius: 5px;
+        }
+
+        .box img {
+            width: 162px;
+            height: auto;
+        }
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            background: #eee;
+        }
+
+        #box {
+            width: 1000px;
+            margin: 0 auto;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            background: #ccc;
+            box-shadow: 5px 5px 5px #ccc;
+            position: relative;
+            padding-top: 30px;
+        }
+
+        #box div {
+            box-shadow: 2px 2px 5px #333;
+            display: inline-block;
+            margin: 5px 8px;
+            border-radius: 8px;
+            position: absolute;
+            background: rgb(207, 203, 102);
+        }
+
+        #box div img {
+            border-radius: 8px;
+        }
+
+        #box div p {
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            color: rgb(64, 19, 177);
+            height: 20px;
+            line-height: 20px;
+        }
+
+        #box div p span {
+            color: rgb(141, 12, 110);
+        }
+
+        #dark {
+            width: 100%;
+            height: 100%;
+            background: black;
+            position: fixed;
+            opacity: 0.8;
+            top: 0;
+            z-index: 1;
+            display: none;
+        }
+
+        #content {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 2;
+            display: none;
+        }
+
+        #tops {
+            width: 100%;
+            height: 567px;
+        }
+
+        #tops p.x {
+            width: 47px;
+            height: 47px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 4;
+            opacity: 0.6;
+            background: url(../images/layerclose.hover.png);
+        }
+
+        #tops .LR {
+            width: 100%;
+            height: 550px;
+        }
+
+        #tops .LR div.bigarea {
+            width: 1205px;
+            height: 550px;
+            float: left;
+            position: relative;
+        }
+
+        #tops .LR p {
+            width: 80px;
+            height: 550px;
+            float: left;
+            opacity: 0;
+        }
+
+        #tops .LR p.left {
+            background: url(../images/left_hover.png ) no-repeat -10px center;
+        }
+
+        #tops .LR p.right {
+            float: right;
+            background: url(../images/right_hover.png ) no-repeat left center;
+        }
+
+        #tops .LR .bigarea img {
+            display: none;
+            margin: 0 auto;
+            width: 876px;
+            height: 400px;
+            position: absolute;
+        }
+
+        #tops .LR .bigarea img:first-child {
+            display: block;
+        }
+
+        #bots {
+            width: 100%;
+            height: 100px;
+            position: relative;
+            background: #0F1016;
+        }
+
+        #bots .kuang {
+            position: absolute;
+            left: 646px;
+            top: 15px;
+        }
+
+        #bots .langImg {
+            width: 1174px;
+            height: 70px;
+            margin-left: 100px;
+            padding-top: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #bots .langImg .areaImg {
+            height: 70px;
+            position: absolute;
+            left: 0px;
+            margin-left: 546px;
+        }
+
+        #bots .langImg .areaImg img {
+            width: 64px;
+            height: 64px;
+            padding: 3px;
+            display: block;
+            float: left;
+        }
+
+        #bots .LeftSmallImg {
+            width: 10px;
+            height: 70px;
+            float: left;
+            margin-left: 66px;
+            margin-top: 15px;
+            background: url(../images/SmallImgLeft.png) no-repeat;
+        }
+
+        #bots .RightSmallImg {
+            width: 10px;
+            height: 70px;
+            float: right;
+            margin-top: 15px;
+            margin-right: 66px;
+            background: url(../images/smallImgRight.png) no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div class="pin">
+            <div class="box">
+                <img src="./image/1.jpg" />
+            </div>
+        </div>
+        <div class="pin">
+            <div class="box">
+                <img src="./image/2.jpg" />
+            </div>
+        </div>
+        <div class="pin">
+            <div class="box">
+                <img src="./image/3.jpg" />
+            </div>
+        </div>
+        <div class="pin">
+            <div class="box">
+                <img src="./image/4.jpg" />
+            </div>
+        </div>
+        <div class="pin">
+            <div class="box">
+                <img src="./image/5.jpg" />
+            </div>
+        </div>
+        <div class="pin">
+            <div class="box">
+                <img src="./image/6.jpg" />
+            </div>
+        </div>
+        <div class="pin">
+            <div class="box">
+                <img src="./image/7.jpg" />
+            </div>
+        </div>
+        <div class="pin">
+            <div class="box">
+                <img src="./image/8.jpg" />
+            </div>
+        </div>
+        <div class="pin">
+            <div class="box">
+                <img src="./image/9.jpg" />
+            </div>
+        </div>
+        <div class="pin">
+            <div class="box">
+                <img src="./image/10.jpg" />
+            </div>
+        </div>
+        <div class="pin">
+            <div class="box">
+                <img src="./image/11.jpg" />
+            </div>
+        </div>
+        <div class="pin">
+            <div class="box">
+                <img src="./image/12.jpg" />
+            </div>
+        </div>
+        <div class="pin">
+            <div class="box">
+                <img src="./image/13.jpg" />
+            </div>
+        </div>
+        <div class="pin">
+            <div class="box">
+                <img src="./image/14.jpg" />
+            </div>
+        </div>
+        <div class="pin">
+            <div class="box">
+                <img src="./image/15.jpg" />
+            </div>
+        </div>
+        <div class="pin">
+            <div class="box">
+                <img src="./image/16.jpg" />
+            </div>
+        </div>
+        <div class="pin">
+            <div class="box">
+                <img src="./image/17.jpg" />
+            </div>
+        </div>
+        <div class="pin">
+            <div class="box">
+                <img src="./image/18.jpg" />
+            </div>
+        </div>
+        <div class="pin">
+            <div class="box">
+                <img src="./image/19.jpg" />
+            </div>
+        </div>
+        <div class="pin">
+            <div class="box">
+                <img src="./image/20.jpg" />
+            </div>
+        </div>
+        <div class="pin">
+            <div class="box">
+                <img src="./image/21.jpg" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            waterFall("main", "pin")
+            //设置一个json，存储要加载的数据块
+            var dataInt = {
+                "data": [{
+                        "src": "22.jpg"
+                    },
+                    {
+                        "src": "23.jpg"
+                    },
+                    {
+                        "src": "24.jpg"
+                    },
+                    {
+                        "src": "25.jpg"
+                    },
+                    {
+                        "src": "26.jpg"
+                    },
+                    {
+                        "src": "27.jpg"
+                    },
+                    {
+                        "src": "28.jpg"
+                    },
+                    {
+                        "src": "29.jpg"
+                    },
+                    {
+                        "src": "30.jpg"
+                    },
+                    {
+                        "src": "31.jpg"
+                    },
+                    {
+                        "src": "32.jpg"
+                    },
+                    {
+                        "src": "33.jpg"
+                    },
+                    {
+                        "src": "34.jpg"
+                    },
+                    {
+                        "src": "35.jpg"
+                    },
+                    {
+                        "src": "36.jpg"
+                    },
+                    {
+                        "src": "37.jpg"
+                    },
+                    {
+                        "src": "38.jpg"
+                    },
+                    {
+                        "src": "39.jpg"
+                    },
+                    {
+                        "src": "40.jpg"
+                    },
+                ]
+            };
+            //y页面发生滚动时执行
+            window.onscroll = function () {
+                if (checkScroll()) {
+                    var oMain = document.getElementById("main");
+                    for (var i = 0; i < dataInt.data.length; i++) {
+                        var oPin = document.createElement("div");
+                        oPin.className = "pin";
+                        oMain.appendChild(oPin);
+                        var oBox = document.createElement("div");
+                        oBox.className = "box";
+                        oPin.appendChild(oBox);
+                        var oImg = document.createElement("img");
+                        oImg.src = "./image/" + dataInt.data[i].src;
+                        oBox.appendChild(oImg);
+                    }
+                    waterFall("main", "pin");
+                };
+            }
+        }
+
+        function waterFall(oParent, obj) {
+
+            var oMain = document.getElementById(oParent);
+            var oPin = getClass(oMain, obj);
+            //console.log(oPin.length);
+            var oPinW = oPin[0].offsetWidth; //因为每个pin盒子的宽度一样高度不一样，取得其中一个的宽度
+            var num = Math.floor(document.documentElement.clientWidth / oPinW); //每行中能容纳的pin盒子个数
+            oMain.style.cssText = "width:" + oPinW * num + "px;margin:0 auto;"; //设置父级居中样式
+
+            var oPinHArr = []; //因为pin盒子的高度不一致，可将每一列的盒子高度存在数组中
+            for (var i = 0; i < oPin.length; i++) {
+                var oPinH = oPin[i].offsetHeight;
+                if (i < num) {
+                    oPinHArr[i] = oPinH; //第一行中num个pin盒子，将他们的高度添加进数组oPinHArr
+                } else { //以下是大于第一行索引的，i >= num 的
+                    var minH = Math.min.apply(null, oPinHArr); //用apply方法取得oPinHArr的最小值
+                    var minHIndex = getminHIndex(oPinHArr, minH);
+                    oPin[i].style.position = "absolute";
+                    oPin[i].style.top = minH + "px";
+                    oPin[i].style.left = oPin[minHIndex].offsetLeft + "px";
+                    oPinHArr[minHIndex] += oPin[i].offsetHeight;
+                }
+            }
+        }
+
+        //取得类名
+        function getClass(obj, cls) {
+            var all = [];
+            var elements = obj.getElementsByTagName("*");
+            for (var i = 0; i < elements.length; i++) {
+                if (elements[i].className == cls) {
+                    all.push(elements[i]);
+                }
+            }
+            return all;
+        }
+
+        //取得最小高度的索引index
+        function getminHIndex(arr, minH) {
+            for (var i in arr) {
+                if (arr[i] == minH) { //要注意等于和赋值的区别‘==’等于，‘=’是赋值
+                    return i;
+                }
+            }
+        }
+
+        //判断页面滚动是否到达指定位置
+        function checkScroll() {
+            var oMain = document.getElementById("main");
+            var oPin = getClass(oMain, "pin");
+            var lastPinH = oPin[oPin.length - 1].offsetTop + Math.floor(oPin[oPin.length - 1].offsetHeight / 2);
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            var documentH = document.documentElement.clientHeight;
+            return (lastPinH < scrollTop + documentH) ? true : false;
+        }
+    </script>
+</body>
+
+</html>
