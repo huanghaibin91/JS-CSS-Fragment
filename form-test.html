@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    </head>
+    <body>
+        <form action="">
+            <label>姓名： <input type="text" class="name" /></label><br />
+            <label>密码： <input type="password" class="pass1" /></label><br />
+            <label>再次输入密码： <input type="password" class="pass2" /></label><br />
+            <label><button type="submit" class="sub">提交</button></label>
+        </form>
+
+        <!-- script -->
+        <script>
+            $(document).ready(function () {
+                var subFlag = false;
+                var subFlagArr = [false, false];
+                $('.name').blur(function () {
+                    if ($(this).val() !== '')  {
+                        subFlagArr[0] = true;
+                    } else {
+                        alert('姓名不能为空');
+                    }
+                });
+                $('.pass2').blur(function () {
+                    if ($(this).val() === $('.pass1').val()) {
+                        subFlagArr[1] = true;
+                    } else {
+                        alert('两次密码输入不一致');
+                    }
+                });
+                $('.sub').click(function () {
+                    subFlag = subFlagArr.every(function (val) {
+                        return val === true;
+                    });
+                    if (subFlag) {
+                        alert('正在提交');
+                    } else {
+                        return false;
+                    }
+                })
+            });
+        </script>
+    </body>
+</html>

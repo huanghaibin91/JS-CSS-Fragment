@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>圆形进度条</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .circle-box {
+                width: 200px;
+                height: 200px;
+                margin: 50px auto;
+                position: relative;
+                border:1px solid #ddd;
+            }
+            .circle-right, .circle-left {
+                width: 100px;
+                height: 200px;
+                position: absolute;
+                top:0;
+                overflow: hidden; /* 重点，设置遮挡超出部分，才能在旋转后显示部分进度条 */
+            }
+            .circle-left {
+                left: 0px;
+            }
+            .circle-right {
+                right: 0px;
+            }
+            .left-inner, .right-inner {
+                width: 160px;
+                height: 160px;
+                border:20px solid transparent;
+                border-radius: 50%;
+                position: absolute;
+                top:0;
+            }
+            .right-inner {
+                border-top:20px solid green;
+                border-right:20px solid green;
+                right:0;
+                transform: rotate(30deg);
+            }
+            .left-inner {
+                border-bottom:20px solid green;
+                border-left:20px solid green;
+                left:0;
+                transform: rotate(30deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="circle-box">
+            <div class="circle-left">
+                <div class="left-inner"></div>
+            </div>
+            <div class="circle-right">
+                <div class="right-inner"></div>
+            </div>
+        </div>
+    </body>
+</html>
