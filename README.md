@@ -1,2 +1,2 @@
 # JS-demos
-JS效果合集
+JS片段
