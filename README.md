@@ -1,2 +1,6 @@
-# JS-demos
-JS效果合集
+# JS-CSS-Fragment #
+
+JS与CSS代码片段
+
+----------
+

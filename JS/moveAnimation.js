@@ -1,9 +1,9 @@
-/*简单动画*/
+// 简单移动动画
 function startMove(element, json, t, fn) {
     var flag = true;
     var timer = null;
     clearInterval(element.timer);
-    element.timer = setInterval(function() {
+    element.timer = setInterval(function () {
         for (var attr in json) {
             var icur = 0;
             if (attr == "opacity") {
