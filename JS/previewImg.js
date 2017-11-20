@@ -29,15 +29,15 @@ var previewImg = function (event, pos, pro) {
         var html = "";
         switch (type) {
             case "image":
+                // reader完成之后的结果为reader.result，可以作为结果储存传递 
                 // 如果要给img设置CSS，使用内联style 
                 html = "<img src=\"" + reader.result + "\">";
                 break;
             case "text":
                 html = reader.result;
                 break;
-
         }
-        output.innerHTML = html;
+        pos.innerHTML = html;
     };
 }
 
