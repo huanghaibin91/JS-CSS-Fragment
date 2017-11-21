@@ -1,6 +1,5 @@
 // 封装拖动函数
-;
-(function () {
+;(function () {
     // 这是一个私有属性，不需要被实例访问
     var transform = getTransform();
 

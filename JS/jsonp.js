@@ -1,5 +1,5 @@
 // 原生JS封装jsonp
-(function (global) {
+;(function (global) {
     var container = document.getElementsByTagName("head")[0];
     // options参数对象包含，url、data对象、callback默认参数response
     function jsonp(options) {

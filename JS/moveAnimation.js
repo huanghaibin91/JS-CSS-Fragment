@@ -29,5 +29,9 @@ function startMove(element, json, t, fn) {
                 fn();
             }
         }
-    }, t)
+    }, t);
+    // 获取样式
+    function getStyle (ele, attr) {
+        return window.getComputedStyle ? window.getComputedStyle(ele)[attr] : ele.currentStyle[attr];
+    }
 }
